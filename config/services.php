@@ -44,4 +44,16 @@ return [
         ],
     ],
 
+    'google' => [
+        'client_id' => '59021853002-rf4082060f437up5k1oio0clcj75178s.apps.googleusercontent.com',
+        'client_secret' => 'lHEaLsFbEBbEOYxH69ZJVPEh',
+        'redirect' => 'http://localhost:8000/user/google/callback',
+    ],
+
+    'facebook' => [
+        'client_id' => '2507464129477191',
+        'client_secret' => 'ccbe727489bc0529acc3ee9cf2d13287',
+        'redirect' => 'http://localhost:8000/user/facebook/callback',
+    ],
+
 ];

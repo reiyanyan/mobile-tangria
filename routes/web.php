@@ -40,3 +40,6 @@ Route::post('profile', 'UserController@profile');
 Route::post('available-time', 'UserController@available_time');
 Route::post('booking', 'UserController@booking');
 Route::post('booking_history', 'UserController@booking_history');
+
+Route::get('user/{driver}', 'UserController@redirectToProvider');
+Route::get('user/{driver}/callback', 'UserController@handleProviderCallback');

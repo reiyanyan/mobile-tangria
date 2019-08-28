@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Socialite;
 
 class UserController extends Controller
 {
@@ -115,6 +116,30 @@ class UserController extends Controller
         $response = curl_exec($ch);
         curl_close($ch);
         return $response;
+    }
+
+    public function redirectToProvider($driver){
+        return Socialite::driver($driver)->redirect();
+    }
+
+    public function handleProviderCallback($driver){
+        $user = Socialite::driver($driver)->user();
+
+        $field = [
+            'name' => $user->name,
+            'email' => $user->email,
+            'avatar' => $user->avatar,
+            'provider' => $driver,
+            'fcm_token' => $user->token,
+        ];
+        $ch = curl_init('http://tangria.smkrus.com/api/user/medsos');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $field);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        
+        $data = json_decode($response);
+        return view('setLocalStorage', compact('data'));
     }
 
 }
