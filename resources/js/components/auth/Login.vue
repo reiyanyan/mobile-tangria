@@ -44,7 +44,9 @@
             @click="loginFacebook"
             block
             round
-          >Login with Facebook</v-btn>
+          >
+            <img src="/img/logo/facebook-logo.png" alt="facebook" /> Login with Facebook
+          </v-btn>
         </v-card-actions>
         <v-card-actions>
           <v-btn
@@ -77,7 +79,8 @@
 
 <style scoped>
 .facebook-btn img {
-  height: 80%;
+  height: 18px;
+  margin-right: 10px;
 }
 </style>
 
