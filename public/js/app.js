@@ -2632,6 +2632,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (this.$root.guest == "false") {
@@ -7305,7 +7313,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.facebook-btn img[data-v-4221c3ad] {\r\n  height: 18px;\r\n  margin-right: 10px;\n}\r\n", ""]);
+exports.push([module.i, "\n.facebook-btn img[data-v-4221c3ad] {\r\n  height: 18px;\r\n  margin-right: 10px;\n}\n.google-btn img[data-v-4221c3ad] {\r\n  height: 18px;\r\n  margin-right: 10px;\n}\r\n", ""]);
 
 // exports
 
@@ -42040,11 +42048,20 @@ var render = function() {
                   _c(
                     "v-btn",
                     {
+                      staticClass: "google-btn",
                       staticStyle: { "background-color": "#B6B6B6" },
                       attrs: { dark: "", block: "", round: "" },
                       on: { click: _vm.loginGoogle }
                     },
-                    [_vm._v("Login with Google")]
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "/img/logo/google-logo.png",
+                          alt: "google"
+                        }
+                      }),
+                      _vm._v(" Login with Google\n        ")
+                    ]
                   )
                 ],
                 1

@@ -50,12 +50,15 @@
         </v-card-actions>
         <v-card-actions>
           <v-btn
+            class="google-btn"
             style="background-color: #B6B6B6"
             dark
             @click="loginGoogle"
             block
             round
-          >Login with Google</v-btn>
+          >
+            <img src="/img/logo/google-logo.png" alt="google" /> Login with Google
+          </v-btn>
         </v-card-actions>
       </v-card>
       <h4 class="mt-4 text-center">
@@ -79,6 +82,11 @@
 
 <style scoped>
 .facebook-btn img {
+  height: 18px;
+  margin-right: 10px;
+}
+
+.google-btn img {
   height: 18px;
   margin-right: 10px;
 }
