@@ -13,7 +13,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
-        $ch = curl_init('http://tangria.smkrus.com/api/user/login');
+        $ch = curl_init('http://admin.tangriaspa.com/api/user/login');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $field);
         $response = curl_exec($ch);
@@ -29,7 +29,7 @@ class UserController extends Controller
             'fcm_token' => 0,
             'password' => $request->password,
         ];
-        $ch = curl_init('http://tangria.smkrus.com/api/user/signup');
+        $ch = curl_init('http://admin.tangriaspa.com/api/user/signup');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $field);
         $response = curl_exec($ch);
@@ -40,7 +40,7 @@ class UserController extends Controller
     public function package(){
         $ch = curl_init(); 
 
-        curl_setopt($ch, CURLOPT_URL, "http://tangria.smkrus.com/api/product/package_treatment");
+        curl_setopt($ch, CURLOPT_URL, "http://admin.tangriaspa.com/api/product/package_treatment");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $response = curl_exec($ch); 
         curl_close($ch);
@@ -50,7 +50,7 @@ class UserController extends Controller
     public function ala_carte(){
         $ch = curl_init(); 
 
-        curl_setopt($ch, CURLOPT_URL, "http://tangria.smkrus.com/api/product/ala_carte_treatment");
+        curl_setopt($ch, CURLOPT_URL, "http://admin.tangriaspa.com/api/product/ala_carte_treatment");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $response = curl_exec($ch); 
         curl_close($ch);
@@ -60,7 +60,7 @@ class UserController extends Controller
     public function busy(){
         $ch = curl_init(); 
 
-        curl_setopt($ch, CURLOPT_URL, "http://tangria.smkrus.com/api/busy");
+        curl_setopt($ch, CURLOPT_URL, "http://admin.tangriaspa.com/api/busy");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $response = curl_exec($ch); 
         curl_close($ch);
@@ -71,7 +71,7 @@ class UserController extends Controller
         $field = [
             'id' => $request->id
         ];
-        $ch = curl_init('http://tangria.smkrus.com/api/user');
+        $ch = curl_init('http://admin.tangriaspa.com/api/user');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $field);
         $response = curl_exec($ch);
@@ -84,7 +84,7 @@ class UserController extends Controller
             'date' => $request->date,
             'ordername' => $request->ordername
         ];
-        $ch = curl_init('http://tangria.smkrus.com/api/available-time');
+        $ch = curl_init('http://admin.tangriaspa.com/api/available-time');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $field);
         $response = curl_exec($ch);
@@ -98,7 +98,7 @@ class UserController extends Controller
             'date' => $request->date,
             'order' => $request->order
         ];
-        $ch = curl_init('http://tangria.smkrus.com/api/booking');
+        $ch = curl_init('http://admin.tangriaspa.com/api/booking');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $field);
         $response = curl_exec($ch);
@@ -110,7 +110,7 @@ class UserController extends Controller
         $field = [
             'user_id' => $request->user_id
         ];
-        $ch = curl_init('http://tangria.smkrus.com/api/booking/history');
+        $ch = curl_init('http://admin.tangriaspa.com/api/booking/history');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $field);
         $response = curl_exec($ch);
@@ -132,9 +132,10 @@ class UserController extends Controller
             'provider' => $driver,
             'fcm_token' => $user->token,
         ];
-        $ch = curl_init('http://tangria.smkrus.com/api/user/medsos');
+        $ch = curl_init('http://admin.tangriaspa.com/api/user/medsos');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $field);
+        curl_setopt($ch, CURLOPT_SSLVERSION, 2);
         $response = curl_exec($ch);
         curl_close($ch);
         

@@ -38,7 +38,8 @@
         </v-card-text>
         <v-card-actions>
           <v-btn
-            style="background-color: #0F978F"
+            class="facebook-btn"
+            style="background-color: #3B5998"
             dark
             @click="loginFacebook"
             block
@@ -47,7 +48,7 @@
         </v-card-actions>
         <v-card-actions>
           <v-btn
-            style="background-color: #0F978F"
+            style="background-color: #B6B6B6"
             dark
             @click="loginGoogle"
             block
@@ -73,6 +74,12 @@
     </template>
   </v-layout>
 </template>
+
+<style scoped>
+.facebook-btn img {
+  height: 80%;
+}
+</style>
 
 <script>
 export default {
